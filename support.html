@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!--
+  Support page for the Buku 555 iPhone app.
+  Use this file's public URL (for example https://<user>.github.io/<repo>/support.html) as the
+  "Support URL" in App Store Connect. Same look as privacy-policy.html; it is fully self-contained:
+  no scripts, no external stylesheets, no fonts, no remote images, so it loads nothing off the page.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Buku 555 Support</title>
+  <style>
+    :root {
+      --ink: #1f2328;
+      --muted: #5b6069;
+      --line: #e4e7eb;
+      --bg: #ffffff;
+      --accent: #0a6b52;
+      --max: 720px;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 32px 20px 72px;
+    }
+    header { border-bottom: 1px solid var(--line); padding-bottom: 16px; margin-bottom: 8px; }
+    h1 { font-size: 1.7rem; line-height: 1.25; margin: 0 0 4px; }
+    .updated { color: var(--muted); font-size: 0.9rem; margin: 0; }
+    h2 { font-size: 1.15rem; margin: 30px 0 8px; }
+    p, li { margin: 8px 0; }
+    ul, ol { padding-left: 22px; }
+    ol li { margin: 6px 0; }
+    strong { color: var(--ink); }
+    .lead {
+      background: #f3f6f5;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin: 18px 0;
+    }
+    .lead p { margin: 0; }
+    a { color: var(--accent); word-break: break-word; }
+    .contact { font-size: 1.02rem; }
+    .path {
+      background: #f6f7f8;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin: 10px 0;
+      color: var(--ink);
+    }
+    footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.85rem; }
+    @media (max-width: 480px) {
+      main { padding: 24px 16px 56px; }
+      h1 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Buku 555 &mdash; Support</h1>
+      <p class="updated">Updated <time datetime="2026-11-17">17 November 2026</time></p>
+    </header>
+
+    <div class="lead">
+      <p><strong>Buku 555 is an expense tracker for iPhone that fills itself in:</strong> card
+      payments are caught automatically and receipt photos read themselves, so you mostly just
+      confirm. Your spending stays on your own iPhone.</p>
+    </div>
+
+    <h2>How do card payments get added on their own?</h2>
+    <p>When you pay with a card in Apple Wallet, a Shortcuts <em>personal automation</em> you set
+      up once sends that payment to Buku 555, which files it as a <strong>draft</strong> in the
+      <strong>Review</strong> tab. Confirm it, edit it, or discard it. A draft does not count
+      toward your totals until you confirm it.</p>
+    <p>Setup takes about a minute. Open the in-app guide &mdash; you can reach it from either of
+      these places:</p>
+    <div class="path">
+      <strong>Settings &rarr; Automatic capture &rarr; Wallet Shortcut guide</strong>, or<br>
+      <strong>Review tab &rarr; How to set up</strong>
+    </div>
+    <p>In short, the guide walks you through this in the Shortcuts app:</p>
+    <ol>
+      <li>Open <strong>Shortcuts</strong> and go to the <strong>Automation</strong> tab.</li>
+      <li>Add an automation, and under Apps choose <strong>&ldquo;Wallet &ndash; When I tap a
+        Wallet Card or Pass&rdquo;</strong>.</li>
+      <li>Tick the card(s) you pay with.</li>
+      <li>Add the action <strong>Log card tap</strong> (Buku&nbsp;555).</li>
+      <li>Optional: map <em>Merchant</em>, <em>Amount</em> and <em>Card</em> to the automation&rsquo;s
+        input so they fill in by themselves. If you skip this, each tap still makes a draft you can
+        fill in.</li>
+      <li>Turn off <strong>Show When Run</strong>, then finish.</li>
+    </ol>
+    <p><strong>Test it without paying.</strong> Because the automation only fires from a real tap,
+      the guide has a <strong>&ldquo;Test it&rdquo;</strong> button. Tap it and the app creates a
+      test draft through the exact same path a real tap uses, so you can see how Review works even
+      if you have nothing to buy right now.</p>
+    <p>To be told when a new draft is waiting, keep <strong>&ldquo;Notify me on a new tap&rdquo;</strong>
+      on in Settings (Automatic capture). These are local notifications on your phone.</p>
+
+    <h2>Why isn&rsquo;t my Touch&nbsp;’n&nbsp;Go eWallet or DuitNow QR payment caught?</h2>
+    <p>By design. The automation can only see transactions Apple Pay already recorded as a
+      <strong>Wallet card tap</strong>. An e-wallet balance and a QR or DuitNow transfer are not
+      card taps, so nothing on the phone can catch them automatically. For those, add the expense by
+      hand (the <strong>&ldquo;+&rdquo;</strong> button) or scan the receipt.</p>
+
+    <h2>Do I tap the plastic card or my phone?</h2>
+    <p>Pay with <strong>Apple Pay on the iPhone</strong>, not the physical plastic card. The
+      automation watches the phone&rsquo;s Wallet transaction. A tap-to-pay with the plastic card in a
+      terminal is not seen by the app.</p>
+
+    <h2>How does receipt reading work?</h2>
+    <p>Tap <strong>Scan</strong> and point the camera at a receipt. The app crops it and reads the
+      shop, date, total and line items.</p>
+    <ul>
+      <li><strong>On this iPhone</strong> (the default): reading happens on the device with
+        Apple&rsquo;s own text recognition. It is free, private, and works offline &mdash; nothing leaves
+        your phone for this to work.</li>
+      <li><strong>Google AI</strong> (optional): reads a few more receipts correctly, but only if you
+        turn it on yourself in <strong>Settings &rarr; Receipt reading</strong> <em>and</em> paste
+        <strong>your own</strong> Google AI key (a free key from aistudio.google.com). When it is on,
+        each receipt photo you scan is sent to Google to be read; your key is kept in this
+        iPhone&rsquo;s Keychain and never sent to us. If there is no key or Google cannot be reached,
+        the app simply reads the receipt on the phone instead.</li>
+      <li><strong>Off</strong>: the photo is kept with the expense and you type the details.</li>
+    </ul>
+
+    <h2>How do I export, back up, or restore?</h2>
+    <p>All of this is in <strong>Settings &rarr; Data</strong>:</p>
+    <ul>
+      <li><strong>Export CSV</strong> &mdash; a spreadsheet-friendly file of your confirmed expenses.</li>
+      <li><strong>Back up to a file</strong> &mdash; a full backup you can import again later.</li>
+      <li><strong>Import expenses</strong> &mdash; restores from a backup file, or brings in expenses
+        from the old Buku&nbsp;555 (a JSON file). Importing the same file again adds nothing, so it is
+        safe to repeat.</li>
+    </ul>
+    <p>Both export options open the normal iOS share sheet, so you choose where the file goes (Files,
+      email, wherever). The CSV export covers confirmed expenses; drafts still in Review are not
+      exported.</p>
+
+    <h2>Where is my data stored?</h2>
+    <p>Only on this iPhone. Your expenses, receipt photos, tags and settings live in the app&rsquo;s own
+      on-device store. We run <strong>no server and never receive your data</strong>; it is not uploaded
+      anywhere by us. The app works offline and there is no account and no sign-in. As with any app,
+      your data is included only in <strong>your own iPhone and iCloud device backups</strong>, which
+      Apple manages and you control.</p>
+
+    <h2>How do I delete everything?</h2>
+    <p>To remove a single expense, swipe it in <strong>Home</strong> or delete it from the edit screen.
+      To clear the lot at once, <strong>delete the app</strong> from your iPhone &mdash; that removes the
+      app and everything stored on the device with it. If you want to keep the data first, back it up
+      to a file (Settings &rarr; Data) before deleting the app.</p>
+
+    <h2>Still stuck?</h2>
+    <p class="contact">Email us at <a href="mailto:muhd.faiz@gmail.com">muhd.faiz@gmail.com</a>.</p>
+    <p>You can also read how the app handles your information in our
+      <a href="privacy.html">Privacy Policy</a> (in the same folder).</p>
+
+    <footer>
+      <p>Buku&nbsp;555 Support &middot; English &middot; This page links only to the privacy policy in the
+      same folder and a mailto address; it loads no external resources.</p>
+    </footer>
+  </main>
+</body>
+</html>
