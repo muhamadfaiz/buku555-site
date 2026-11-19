@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Buku 555 Wallet Setup Guide</title>
+  <style>
+    :root {
+      --ink: #1f2328;
+      --muted: #5b6069;
+      --line: #e4e7eb;
+      --bg: #ffffff;
+      --accent: #0a6b52;
+      --max: 720px;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 32px 20px 72px;
+    }
+    header { border-bottom: 1px solid var(--line); padding-bottom: 16px; margin-bottom: 8px; }
+    h1 { font-size: 1.7rem; line-height: 1.25; margin: 0 0 4px; }
+    .updated { color: var(--muted); font-size: 0.9rem; margin: 0; }
+    h2 { font-size: 1.15rem; margin: 30px 0 8px; }
+    p, li { margin: 8px 0; }
+    ul, ol { padding-left: 22px; }
+    ol li { margin: 6px 0; }
+    strong { color: var(--ink); }
+    .lead {
+      background: #f3f6f5;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin: 18px 0;
+    }
+    .lead p { margin: 0; }
+    a { color: var(--accent); word-break: break-word; }
+    .path {
+      background: #f6f7f8;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin: 10px 0;
+      color: var(--ink);
+    }
+    figure { margin: 12px 0 18px; }
+    figure img {
+      display: block;
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+    }
+    figure.wide img { max-width: 560px; }
+    footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.85rem; }
+    @media (max-width: 480px) {
+      main { padding: 24px 16px 56px; }
+      h1 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Buku 555 &mdash; Wallet Setup Guide</h1>
+      <p class="updated">Updated <time datetime="2026-11-19">19 November 2026</time></p>
+    </header>
+
+    <div class="lead">
+      <p><strong>Set this up once, and each Apple Pay payment with a card you tick lands in the Review tab as a draft.</strong>
+      Setup takes about a minute in the Shortcuts app. The steps below match the guide inside the app.</p>
+    </div>
+
+    <h2>Before you start</h2>
+    <p>Pay with <strong>Apple Pay on the iPhone</strong>, not the plastic card. TNG eWallet and DuitNow QR are not caught. Add those by hand.</p>
+
+    <h2>Set up the automation</h2>
+    <ol>
+      <li>Open the <strong>Shortcuts</strong> app and go to the <strong>Automation</strong> tab.</li>
+      <li>Open the action search and tap the <strong>Automation</strong> chip. The round <strong>+</strong> makes a plain shortcut, not an automation.
+        <figure class="wide">
+          <img src="img/guide/step2-automation.jpg" width="699" height="900" loading="lazy"
+            alt="The Shortcuts action search with the Automation chip selected, showing the Daily Routine and Location triggers.">
+        </figure>
+      </li>
+      <li>Under <strong>Apps</strong>, choose <strong>&ldquo;Wallet &ndash; When I tap a Wallet Card or Pass&rdquo;</strong>.
+        <figure>
+          <img src="img/guide/step3-wallet.jpg" width="414" height="900" loading="lazy"
+            alt="The Apps section of the trigger list, with Wallet among the choices.">
+        </figure>
+      </li>
+      <li>Tap the card name to tick one or more cards. Keep <strong>Any Category</strong> and <strong>Any Merchant</strong>, <strong>Automation</strong> on, and <strong>Notify</strong> off.
+        <figure class="wide">
+          <img src="img/guide/step4-card-rules.jpg" width="837" height="900" loading="lazy"
+            alt="The automation's Categories, Merchants, Automation and Notify settings, above the Log card tap action.">
+        </figure>
+      </li>
+      <li>Add the action <strong>Log card tap</strong> (Buku&nbsp;555).</li>
+      <li>Optional: tap <strong>Merchant</strong> and pick <strong>Transaction &gt; Merchant</strong>. Tap <strong>Amount (RM)</strong> and pick <strong>Transaction &gt; Amount</strong>. Leave <strong>Card or Pass</strong> empty. If you skip this, each tap makes a draft you fill in.
+        <figure class="wide">
+          <img src="img/guide/step6-amount.jpg" width="540" height="900" loading="lazy"
+            alt="The Amount (RM) field set to Transaction, with the Transaction menu open and Amount ticked.">
+        </figure>
+      </li>
+      <li>Turn off <strong>Show When Run</strong>.</li>
+    </ol>
+
+    <h2>Check it without paying</h2>
+    <p>The automation only runs on a real tap, so the app has a <strong>&ldquo;Test it&rdquo;</strong> button. Open the guide from either place below and tap it:</p>
+    <div class="path">
+      <strong>Settings &rarr; Automatic capture &rarr; Wallet Shortcut guide</strong>, or<br>
+      <strong>Review tab &rarr; How to set up</strong>
+    </div>
+    <p>The button adds a test draft for RM&nbsp;1.00 to Review, through the same path a real tap uses, so you can see how Review works.</p>
+
+    <h2>Tips</h2>
+    <ul>
+      <li><strong>Tick every card you pay with.</strong> If you pay with more than one card, tick each one in step 4.</li>
+      <li><strong>Keep only one Buku&nbsp;555 Wallet automation.</strong> Two of them give duplicate drafts for every tap.</li>
+      <li><strong>Never put the whole Transaction in a field.</strong> Pick <em>Transaction &gt; Merchant</em> or <em>Transaction &gt; Amount</em> instead. Putting the whole Transaction in a field causes the error &ldquo;couldn&rsquo;t convert from Transaction to Text&rdquo;.
+        <figure class="wide">
+          <img src="img/guide/tip-transaction-field.jpg" width="900" height="598" loading="lazy"
+            alt="The Log card tap action with the whole Transaction variable in the Amount (RM) field. This is the wrong way.">
+        </figure>
+      </li>
+      <li><strong>Amounts only fill in on a real payment,</strong> not when you press play in Shortcuts.</li>
+      <li><strong>If your bank sends no details,</strong> each tap is a draft you finish in Review.</li>
+    </ul>
+
+    <h2>Still stuck?</h2>
+    <p>See the <a href="support.html">Support</a> page for more help, or read our <a href="privacy.html">Privacy Policy</a>.</p>
+
+    <footer>
+      <p>Buku&nbsp;555 Wallet Setup Guide &middot; English</p>
+    </footer>
+  </main>
+</body>
+</html>
